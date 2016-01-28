@@ -82,7 +82,7 @@ The complete list of variables of each feature vector is available in 'features.
 #### 1. Merge the training and the test sets to create one data set.
 I used several files to construct a single table containing the subjects(people participating in the experiment), activities and the measurements. The table below provides the name of the file used, description of its variables and units of measurement:
 | File Name          | Variables Description                                                                                 | Data Type |
-|---|---|---|
+| --- | --- | --- |
 |features.txt        | names of the measurements such as:  "body-acceleration-X", "body-acceleration-X-mean", "angle-X", etc | Categorical |
 | activity_labels.txt | names and ids of the activities such as: WALKING, WALKING_UPSTAIRS, etc                               | Categorical |
 | subject_train.txt   | repetitive collection of subject ids for 1-30 subjects                                                | Integer |
@@ -94,7 +94,7 @@ I used several files to construct a single table containing the subjects(people 
 
 The measurements are taken on accelaration and angular velocity in 3 directions (X,Y,Z) with following units:
 | Measurement    | Unit |
-|---|---|
+| --- | --- |
 | Acceleration     | `g=9.8 m/s^2`|
 | Angular velocity | `rad/s` |
 
