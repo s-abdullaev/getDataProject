@@ -90,4 +90,4 @@ tidyDf = tbl_df(finalData)                              %>% #convert to data fra
     arrange(subjectId, activityId)                          #sorted by subjectId
 
 #saving the data frame as table in tidy.txt
-write.table(tidyDf, './data/tidy.txt', row.names=TRUE, sep='\t')
+write.table(tidyDf, './data/tidy.txt', row.names=FALSE, sep='\t')
