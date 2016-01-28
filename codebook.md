@@ -29,51 +29,51 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are:
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values.
-iqr(): Interquartile range
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal
-kurtosis(): kurtosis of the frequency domain signal
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+- mean(): Mean value
+- std(): Standard deviation
+- mad(): Median absolute deviation
+- max(): Largest value in array
+- min(): Smallest value in array
+- sma(): Signal magnitude area
+- energy(): Energy measure. Sum of the squares divided by the number of values.
+- iqr(): Interquartile range
+- entropy(): Signal entropy
+- arCoeff(): Autorregresion coefficients with Burg order equal to 4
+- correlation(): correlation coefficient between two signals
+- maxInds(): index of the frequency component with largest magnitude
+- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+- skewness(): skewness of the frequency domain signal
+- kurtosis(): kurtosis of the frequency domain signal
+- bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+- angle(): Angle between to vectors.
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+- gravityMean
+- tBodyAccMean
+- tBodyAccJerkMean
+- tBodyGyroMean
+- tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
@@ -81,22 +81,17 @@ The complete list of variables of each feature vector is available in 'features.
 
 #### 1. Merge the training and the test sets to create one data set.
 I used several files to construct a single table containing the subjects(people participating in the experiment), activities and the measurements. The table below provides the name of the file used, description of its variables and units of measurement:
-| File Name          | Variables Description                                                                                 | Data Type |
-| --- | --- | --- |
-|features.txt        | names of the measurements such as:  "body-acceleration-X", "body-acceleration-X-mean", "angle-X", etc | Categorical |
-| activity_labels.txt | names and ids of the activities such as: WALKING, WALKING_UPSTAIRS, etc                               | Categorical |
-| subject_train.txt   | repetitive collection of subject ids for 1-30 subjects                                                | Integer |
-| x_train.txt         | values for the measurements in acceleration and angular velocity                                      | Real |
-| y_train.txt         | activity ids per subject                                                                              | Integer |
-| subject_test.txt    | repetitive collection of subject ids for 1-30 subjects                                                | Integer |
-| x_test.txt          | values for the measurements in acceleration and angular velocity                                      | Real |
-| y_test.txt          | activity ids per subject                                                                              | Integer |
 
-The measurements are taken on accelaration and angular velocity in 3 directions (X,Y,Z) with following units:
-| Measurement    | Unit |
-| --- | --- |
-| Acceleration     | `g=9.8 m/s^2`|
-| Angular velocity | `rad/s` |
+- features.txt : names of the measurements such as:  "body-acceleration-X", "body-acceleration-X-mean", "angle-X", etc, Categorical data type
+- activity_labels.txt : names and ids of the activities such as: WALKING, WALKING_UPSTAIRS, etc, Categorical
+- subject_train.txt : repetitive collection of subject ids for 1-30 subjects, Integer
+- x_train.txt : values for the measurements in acceleration and angular velocity, Real
+- y_train.txt : activity ids per subject, Integer
+- subject_test.txt : repetitive collection of subject ids for 1-30 subjects, Integer
+- x_test.txt : values for the measurements in acceleration and angular velocity, Real
+- y_test.txt : activity ids per subject, Integer
+
+The measurements are taken on accelaration and angular velocity in 3 directions (X,Y,Z) with following units: Acceleration - `g=9.8 m/s^2`, Angular velocity - `rad/s`
 
 I merged columns from subject_train.txt, x_train.txt and y_train.txt into single table. I named the columns of this table as: subjectId, activityId and the names extracted from features.txt.
 Then I appended the data from subject_test.txt, x_test.txt and y_test.txt to the existing table.
