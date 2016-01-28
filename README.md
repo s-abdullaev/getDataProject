@@ -11,3 +11,6 @@ The script is self-contained and does not need any arguments. Only thing require
 setwd("path to script file");
 source("run_analysis.R");
 ```
+### Output
+
+Script outputs to `./data/tidy.txt` a data frame with aggregated means and stds for each subjectId and activityId sorted by subjectId, activityId.  Activity are also labelled correspondingly in activityType column.
