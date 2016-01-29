@@ -87,7 +87,9 @@ tidyDf = tbl_df(finalData)                              %>% #convert to data fra
     group_by(subjectId, activityId)                     %>% #group by subjectId and activityId
     summarise_each(funs(mean))                          %>% #summarise each column with mean function
     merge(y=activityType, by='activityId', all.x=TRUE)  %>% #include activityType column back
-    arrange(subjectId, activityId)                          #sorted by subjectId
+    arrange(subjectId, activityId)                      %>% #sorted by subjectId
+    select(c(2,69,3:68))                                    #reordering columns subjectId, activityType, ...
+
 
 #saving the data frame as table in tidy.txt
 write.table(tidyDf, './data/tidy.txt', row.names=FALSE, sep='\t')
