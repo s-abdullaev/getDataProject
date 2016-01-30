@@ -91,8 +91,6 @@ I used several files to construct a single table containing the subjects(people 
 - x_test.txt : values for the measurements in acceleration and angular velocity, Real
 - y_test.txt : activity ids per subject, Integer
 
-The measurements are taken on accelaration and angular velocity in 3 directions (X,Y,Z) with following units: Acceleration - `g=9.8 m/s^2`, Angular velocity - `rad/s`
-
 I merged columns from subject_train.txt, x_train.txt and y_train.txt into single table. I named the columns of this table as: subjectId, activityId and the names extracted from features.txt.
 Then I appended the data from subject_test.txt, x_test.txt and y_test.txt to the existing table.
 
@@ -109,6 +107,8 @@ I replaced the -mean() to Mean, -std() to Std in column names, and also removed 
 I created a table which groups by activityId and subjectId, and then finds the mean for each measurement inside the finalTable. Then finalTable is saved to source folder as tidyData.txt file.
 
 ###Output Variables:
+
+The variables represent mean accelaration and angular velocity in 3 directions (X,Y,Z) using accelerometer and gyroscope. Unit of measurement: Acceleration - `g=9.8 m/s^2`, Angular velocity - `rad/s`
 
 - subjectId
 - activityType
